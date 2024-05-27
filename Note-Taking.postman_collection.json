@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "91c10847-ca65-4248-8116-503de330f3ef",
+		"name": "Note-Taking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25322749"
+	},
+	"item": [
+		{
+			"name": "All Notes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{server}}/notes",
+				"description": "This API endpoint retrieves all notes for the authenticated user."
+			},
+			"response": []
+		},
+		{
+			"name": "Sign-Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"yourName@gmail.com\",\r\n    \"password\": \"12334\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{server}}/signup",
+				"description": "This API endpoint register a user in the database."
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"yourName@gmail.com\",\r\n    \"password\": \"12334\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{server}}/login",
+				"description": "This API endpoint authenticates the user and redirects to dashboard."
+			},
+			"response": []
+		},
+		{
+			"name": "Create Note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"dfad.com\",\r\n    \"content\": \"fdad\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{server}}/notes",
+				"description": "This API endpoint creates a new note for the authenticated user."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Note",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/notes/:id",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"notes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "This API endpoint deletes a note for the authenticated user.\n\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{server}}/logout",
+				"description": "This API endpoint logout the user.\n\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Note",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"note-title\",\r\n    \"content\": \"note-content\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/notes/:id",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"notes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "This API endpoint updates an existing note for the authenticated user."
+			},
+			"response": []
+		}
+	]
+}
