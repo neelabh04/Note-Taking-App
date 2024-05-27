@@ -50,6 +50,9 @@ Welcome to the Note-Taking App! This application allows users to create, manage,
     DATABASE_URI=your_database_uri
     DATABASE_PORT=your_database_port
 
+    // CORS
+    CORS_ORIGIN=*
+
     // Server Port
     PORT=your_server_port
    ```
