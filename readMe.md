@@ -31,7 +31,7 @@ Welcome to the Note-Taking App! This application allows users to create, manage,
 ## Installation
 1. **Clone the repository**: 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/neelabh04/Note-Taking-App.git
    ```
 
 2. **Set up environment variables**:
