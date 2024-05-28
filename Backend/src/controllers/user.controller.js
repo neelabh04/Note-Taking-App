@@ -4,6 +4,11 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import dotenv from 'dotenv';
+
+dotenv.config({
+  path: '../../../.env'
+})
 
 const generateAccessAndRefreshToken = async (userId) => {
   try {
@@ -21,6 +26,7 @@ const generateAccessAndRefreshToken = async (userId) => {
     const refreshToken = await jwt.sign(
       {
         id: user.id,
+        email: user.email,
       },
       process.env.REFRESH_TOKEN_SECRET,
       {
@@ -106,8 +112,10 @@ const loginUser = asyncHandler(async (req, res) => {
   });
 
   const options = {
-    httpOnly: true,
-    secure: true,
+    httpOnly: true, //accessible only by web server 
+    secure: false, //https
+    sameSite: 'None', //cross-site cookie 
+    maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry: set to match rT
   };
 
   return res
@@ -137,8 +145,10 @@ const logoutUser = asyncHandler(async (req, res) => {
   await user.save();
 
   const options = {
-    httpOnly: true,
-    secure: true,
+    httpOnly: true, //accessible only by web server 
+    secure: false, //https
+    sameSite: 'None', //cross-site cookie 
+    maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry: set to match rT
   };
 
   return res
@@ -173,8 +183,10 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
     }
 
     const options = {
-      httpOnly: true,
-      secure: true,
+      httpOnly: true, //accessible only by web server 
+      secure: false, //https
+      sameSite: 'None', //cross-site cookie 
+      maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry
     };
 
     const { accessToken, newRefreshToken } =

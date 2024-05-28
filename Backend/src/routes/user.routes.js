@@ -6,7 +6,7 @@ const router = Router();
 
 router.route("/signup").post(registerUser)
 router.route("/login").post(loginUser)
-router.route("/refresh-token").post(refreshAccessToken)
+router.route("/refresh-token").get(refreshAccessToken)
 
 // secured route
 router.route("/logout").post(verifyJWT, logoutUser)
