@@ -1,0 +1,17 @@
+{
+  "name": "note-taking-app",
+  "version": "1.0.0",
+  "description": "A simple note-taking app!",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run dev --prefix Backend",
+    "client": "npm run dev --prefix Frontend",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm install && npm install --prefix Frontend && npm install --prefix Backend"
+  },
+  "author": "Neelabh Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
