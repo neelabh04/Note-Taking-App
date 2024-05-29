@@ -112,23 +112,23 @@ const loginUser = asyncHandler(async (req, res) => {
   });
 
   const options = {
-    httpOnly: true, //accessible only by web server 
-    secure: false, //https
-    sameSite: 'None', //cross-site cookie 
-    maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry: set to match rT
+    httpOnly: true, 
+    secure: true, 
+    sameSite: 'None', 
+    maxAge: 7 * 24 * 60 * 60 * 1000 
   };
 
   return res
     .status(200)
     .cookie("accessToken", accessToken, options)
-    .cookie("refreshToken", refreshToken, options)
+    // .cookie("refreshToken", refreshToken, options)
     .json(
       new ApiResponse(
         200,
         {
           user: loggedInUser,
           accessToken,
-          refreshToken,
+          // refreshToken,
         },
         "User logged In Successfully"
       )
@@ -145,10 +145,10 @@ const logoutUser = asyncHandler(async (req, res) => {
   await user.save();
 
   const options = {
-    httpOnly: true, //accessible only by web server 
-    secure: false, //https
-    sameSite: 'None', //cross-site cookie 
-    maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry: set to match rT
+    httpOnly: true, 
+    secure: true, 
+    sameSite: 'None', 
+    maxAge: 7 * 24 * 60 * 60 * 1000 
   };
 
   return res
@@ -183,10 +183,10 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
     }
 
     const options = {
-      httpOnly: true, //accessible only by web server 
-      secure: false, //https
-      sameSite: 'None', //cross-site cookie 
-      maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry
+      httpOnly: true, 
+      secure: true, 
+      sameSite: 'None', 
+      maxAge: 7 * 24 * 60 * 60 * 1000 
     };
 
     const { accessToken, newRefreshToken } =
