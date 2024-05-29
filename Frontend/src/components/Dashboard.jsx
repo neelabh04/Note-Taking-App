@@ -1,14 +1,16 @@
-import NoteList from './NoteList.jsx'
-import NoteForm from './NoteForm.jsx'
+import React from 'react';
+import Navbar from './Navbar';
+import NoteList from './NoteList';
 
 const Dashboard = () => {
   return (
     <div>
-        Dashboard
+      <Navbar />
+      <div className="container mt-4">
         <NoteList />
-        <NoteForm />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
