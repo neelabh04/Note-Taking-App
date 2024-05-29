@@ -178,8 +178,7 @@ Success:
     "user": {
       "email": "yourName@gmail.com"
     },
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ5b3VyTmFtZUBnbWFpbC5jb20iLCJpYXQiOjE3MTY4ODA0ODcsImV4cCI6MTcxNjk2Njg4N30.frt9BjU7FXT8yWgkwVG91SO4U5K83CPLghHB9BGMa80",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE2ODgwNDg3LCJleHAiOjE3MTc3NDQ0ODd9.51TaEZiJDgLzd5-9G4cYO4HfoHP2Z5mC3SgojfCn2fg"
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ5b3VyTmFtZUBnbWFpbC5jb20iLCJpYXQiOjE3MTY4ODA0ODcsImV4cCI6MTcxNjk2Njg4N30.frt9BjU7FXT8yWgkwVG91SO4U5K83CPLghHB9BGMa80"
   },
   "message": "User logged In Successfully",
   "success": true
