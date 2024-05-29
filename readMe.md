@@ -22,8 +22,6 @@ Welcome to the Note-Taking App! This application allows users to create, manage,
 ### Frontend
 
 - React
-- Redux
-- Redux-Toolkit
 - Axios
 - React-Router
 
@@ -73,10 +71,35 @@ Welcome to the Note-Taking App! This application allows users to create, manage,
     // Server Port
     PORT=your_server_port
    ```
+3. We are going to accept CORS request to enable smooth communication between client and server. 
+    - Go to the Frontend folder and open the `vite.config.js` file.
+    - Add the following details in the file as mentioned below.
 
-3. **Set up the database**: Create the database in your local machine using MySQL. Provide the necessary details as mentioned in the `.env` file above.
+      ```js
+      import { defineConfig } from 'vite'
+      import react from '@vitejs/plugin-react'
 
-4. **Install dependencies**: Go to the root of the folder and install the necessary dependenices by going individually in Frontend and Backend of the project. Run the below commands. 
+      // https://vitejs.dev/config/
+      export default defineConfig({
+        server: {
+          proxy: {
+            '/api/v1/': 'http://localhost:<your-server-port>'
+          }
+        },
+        plugins: [react()],
+      })
+
+      ```
+
+4. **Set up the database**: Create the database in your local machine using MySQL. Provide the necessary details as mentioned in the `.env` file above.
+
+5. **Install dependencies**: Go to the root of the project give the below command. It will all the necessary dependencies of the project. 
+   ```bash
+   npm run build
+   ```
+
+6. **Error Occured**: You can do this step if there's an error occured in the previous step. If there's an error occured while installing the dependencies you can individually install the dependency for both frontend and backend of the application. Run the below commands for individual installations.
+
    ```bash
    cd Frontend
    npm install
@@ -87,17 +110,27 @@ Welcome to the Note-Taking App! This application allows users to create, manage,
 
 ## Usage
 
-To start the application, run:
+To start the application go to the root directory of the project and run the below command in your terminal:
 
 ```bash
-npm start
+npm run start
 ```
+
+Still facing errors? You can individually run the frontend and backend of the application by pasting the below commands in your terminal.
+
+   ```bash
+   cd Frontend
+   npm run dev
+
+   cd Backend
+   npm run dev
+   ```
 
 ## API Endpoints
 
-- The following endpoints are present for the application.
-
 **Pro-Tip**: If you have postman installed in your local machine, you can just import the API collection present in the root of the project and start accessing the APIs.
+
+The following endpoints are present for the application.
 
 ### User Endpoints
 
